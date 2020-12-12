@@ -9,6 +9,15 @@ public class MathService {
 
     public String randomMath() throws CustomException {
         String uri = "http://numbersapi.com/random/math";
+        return get(uri);
+    }
+
+    public String math(int number) throws CustomException{
+        String uri = "http://numbersapi.com/" + number;
+        return get(uri);
+
+    }
+    private  String get(String uri) throws CustomException{
         try {
             URL url = new URL(uri);
 
@@ -34,8 +43,6 @@ public class MathService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return null;
+        return null;1
     }
-
 }
